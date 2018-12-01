@@ -1,0 +1,1 @@
+export const FETCH_HOME_BATCH_1 =  `https://api.github.com/users`;
