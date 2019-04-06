@@ -8,13 +8,13 @@
         "test-watch": "npm test -- --watch",
         "start-loc": "webpack-dev-server --hot --inline",
         "build-prod": "npm run dev",
-        "dev": "npm-run-all --parallel dev:*",
+        "dev": "MODE=development npm-run-all --parallel dev:*",
         "dev:build-server": "webpack --config webpack.server-dev.js --watch",
         "dev:build-client": "webpack --config webpack.client-dev.js --watch",
         "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
         "build-sw": "sw-precache --root='public/' --static-file-globs='public/**/!(*map*)'",
-        "prod": "webpack --config webpack.server.js && webpack --config webpack.client.js && sw-precache --root='publicTemp/' --static-file-globs='publicTemp/**/!(*map*)' && rm -rf public/static && cp -r publicTemp/* public/ && rm -r build/ && cp -r buildTemp/ build/",
-        "prod-server": "nodemon --watch build --exec \"node build/bundle.*.js\""
+        "prod": "MODE=production webpack --config webpack.server.js && webpack --config webpack.client.js && sw-precache --root='publicTemp/' --static-file-globs='publicTemp/**/!(*map*)' && rm -rf public/static && cp -r publicTemp/* public/ && rm -r build/ && cp -r buildTemp/ build/",
+        "prod-server": "MODE=production nodemon --watch build --exec \"node build/bundle.*.js\""
     },
     "author": "Rishabh Rawat",
     "license": "ISC",

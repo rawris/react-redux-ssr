@@ -86,6 +86,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
+app.listen(process.env.MODE === 'development' ? 3000 : 80, () => {
+  console.log(`Listening on port ${process.env.MODE === 'development' ? 3000 : 80}`);
 });

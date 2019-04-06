@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   // Tell webpack to run babel on every file it runs through
-  mode: 'development',
+  mode: process.env.MODE,
   module: {
     rules: [{
       test: /\.js?$/,
