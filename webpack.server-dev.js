@@ -14,9 +14,9 @@ const config = {
   // server application
   entry: './src/index.js',
   plugins: [
-    new CleanWebpackPlugin(['buildTemp'], {
-      watch: true
-    }),
+    // new CleanWebpackPlugin(['build'], {
+    //   watch: true
+    // }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
@@ -26,9 +26,9 @@ const config = {
   // Tell webpack where to put the output file
   // that is generated
   output: {
-    filename: 'bundle.[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'buildTemp')
+    filename: 'bundle.js',
+    chunkFilename: '[name].js',
+    path: path.resolve(__dirname, 'build')
   },
 
   externals: [webpackNodeExternals()]

@@ -1,10 +1,4 @@
 import React, { Component } from 'react';
-import {
-    connect
-} from 'react-redux';
-import {
-    Link
-} from 'react-router-dom';
 
 
 class Feed extends Component {
@@ -38,4 +32,4 @@ class Feed extends Component {
     }
 }
 
-export default connect((state) => state)(Feed);
+export default Feed;
